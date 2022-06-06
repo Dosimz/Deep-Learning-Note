@@ -12,10 +12,10 @@
 ```python
     def scatter_map(obj):
         if isinstance(obj, torch.Tensor):
-            batch_size = obj.shape[0]
+            # 获得 batchsize 的数量
+            batch_size = obj.shape[0]  
+            #  将 2/3 的 batchsize 传入第一个 gpu, 剩下的分给第二个
             num1 = 2*batch_size//3
-            # raise "$$$$$$$$$$"
-            # return Scatter.apply(target_gpus, None, dim, obj)
             return Scatter.apply(target_gpus, [num1, batch_size-num1], dim, obj)
    ...
 ```
