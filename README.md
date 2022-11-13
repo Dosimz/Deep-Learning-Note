@@ -19,3 +19,7 @@
             return Scatter.apply(target_gpus, [num1, batch_size-num1], dim, obj)
    ...
 ```
+
+
+### 2 ssh 服务器 log  
+- var/log/auth
